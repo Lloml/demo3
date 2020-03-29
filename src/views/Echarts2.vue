@@ -19,7 +19,8 @@ export default {
     return {
       month: '',
       type: '',
-      monthList: []
+      monthList: ['June Thursday'],
+      selected: 'June Thursday'
     }
   },
   mounted () {

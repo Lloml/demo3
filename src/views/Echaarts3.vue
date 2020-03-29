@@ -63,11 +63,11 @@ export default {
         yAxis: {},
         series: [
           // 这几个系列会在第一个直角坐标系中，每个系列对应到 dataset 的每一行。
-          {type: 'bar', stack: '广告', seriesLayoutBy: 'row'},
-          {type: 'bar', stack: '广告', seriesLayoutBy: 'row'},
-          {type: 'bar', stack: '广告', seriesLayoutBy: 'row'},
-          {type: 'bar', stack: '广告', seriesLayoutBy: 'row'},
-          {type: 'bar', stack: '广告', seriesLayoutBy: 'row'}
+          {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
+          {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
+          {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
+          {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
+          {type: 'bar', stack: ' ', seriesLayoutBy: 'row'}
         ]
       })
     },

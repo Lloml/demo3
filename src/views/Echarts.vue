@@ -24,7 +24,6 @@
 
     </div>
     <div id="myChart" :style="{width: '1000px', height: '500px'}"></div>
-    <img src="static/logo.png">
   </div>
 
 </template>
