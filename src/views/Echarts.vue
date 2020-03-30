@@ -37,8 +37,8 @@ export default {
   },
   data: function () {
     return {
-      selected: this.$store.getters.getMonthList('json1')[0],
-      monthList: this.$store.getters.getMonthList('json1'),
+      selected: this.$store.getters.getMonthList('testData1')[0],
+      monthList: this.$store.getters.getMonthList('testData1'),
       group: 'Power Supply and Consumption'
     }
   },
@@ -53,7 +53,7 @@ export default {
         legend: {
         },
         dataset: {
-          source: this.$store.getters.getDataFromJson1('Heat Supply and Consumption', 'June Thursday', 'bar', 'json1')
+          source: this.$store.getters.getDataFromTestData1('Heat Supply and Consumption', 'June Thursday', 'bar', 'testData1')
         },
         xAxis: {
           type: 'category'
@@ -77,14 +77,14 @@ export default {
     group: function (val, oldVal) {
       myChart.setOption({
         dataset: {
-          source: this.$store.getters.getDataFromJson1(this.group, this.selected, 'bar', 'json1')
+          source: this.$store.getters.getDataFromTestData1(this.group, this.selected, 'bar', 'testData1')
         }
       })
     },
     selected: function (val, oldVal) {
       myChart.setOption({
         dataset: {
-          source: this.$store.getters.getDataFromJson1(this.group, this.selected, 'bar', 'json1')
+          source: this.$store.getters.getDataFromTestData1(this.group, this.selected, 'bar', 'testData1')
         }
       })
     }

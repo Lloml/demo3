@@ -2,24 +2,24 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 Vue.use(Vuex)
-let json1 = require('../assets/json1')
-let json2 = require('../assets/json2')
+let testData1 = require('../assets/json1')
+let testData2 = require('../assets/json2')
 export default new Vuex.Store({
   state: {
     name: 'json',
-    json1: json1,
-    json2: json2,
-    json3: []
+    testData1: testData1,
+    testData2: testData2,
+    testData3: []
   },
   mutations: {
-    setJson3 (state, payload) {
-      state.json3 = payload
+    setTestData3 (state, payload) {
+      state.testData3 = payload
     }
   },
   actions: {},
   modules: {},
   getters: {
-    getDataFromJson1: state => (groupName, month, type, jsonName) => {
+    getDataFromTestData1: state => (groupName, month, type, jsonName) => {
       let result = []
       let data = state[jsonName].filter(item => item['cmd'] === type && item['month'] === month)
       let index = 0
@@ -48,9 +48,9 @@ export default new Vuex.Store({
       // 这里的filter是为了去除无效数据比如null
       return [...result].filter(d => d)
     },
-    getDataFromJson2: state => (month, type) => {
+    getDataFromTestData2: state => (month, type) => {
       let result = [20]
-      let data = state.json2[type][month]
+      let data = state.testData2[type][month]
       let array = ['type']
       for (let i = 1; i <= 24; i++) {
         array.push(i - 1 + 'h')

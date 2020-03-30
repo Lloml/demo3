@@ -9,7 +9,7 @@
       </label>
     </div>
     <div id="myChart" :style="{width: '1000px', height: '500px'}"></div>
-<!--    <p>{{$store.getters.getDataFromJson2('June Thursday','Transformer_1')}}</p>-->
+<!--    <p>{{$store.getters.getDataFromTestData2('June Thursday','Transformer_1')}}</p>-->
   </div>
 </template>
 <script>
@@ -36,7 +36,7 @@ export default {
         tooltip: {},
         legend: {},
         dataset: {
-          source: this.$store.getters.getDataFromJson2('June Thursday', 'Transformer_1')
+          source: this.$store.getters.getDataFromTestData2('June Thursday', 'Transformer_1')
         },
         xAxis: {type: 'category'},
         yAxis: {},

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/erharts3">erharts3</router-link> |
-      <router-link to="/erharts2">erharts2</router-link> |
-      <router-link to="/erharts">erharts</router-link>
+      <router-link to="/erharts">使用数据1的柱状图</router-link> |
+      <router-link to="/erharts2">使用数据2的折线图</router-link> |
+      <router-link to="/erharts3">使用数据3的柱状图</router-link>
     </div>
     <router-view/>
   </div>

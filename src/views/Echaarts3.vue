@@ -1,5 +1,6 @@
 <template>
   <div id="top">
+    <h3>此页面数据通过ajax请求来加载,进度条显示在最上方</h3>
     <div>
       <div id="example-5">
         <label>
@@ -33,15 +34,14 @@ export default {
   name: 'Echarts',
   components: {},
   mounted () {
-    this.getJson3()
+    this.getTestData3()
     this.drawLine()
   },
   data: function () {
     return {
       selected: '',
       monthList: [],
-      group: 'Power Supply and Consumption',
-      json3: []
+      group: 'Power Supply and Consumption'
     }
   },
   methods: {
@@ -55,14 +55,13 @@ export default {
         legend: {
         },
         dataset: {
-          source: this.$store.getters.getDataFromJson1(this.group, this.selected, 'bar', 'json3')
+          source: this.$store.getters.getDataFromTestData1(this.group, this.selected, 'bar', 'testData3')
         },
         xAxis: {
           type: 'category'
         },
         yAxis: {},
         series: [
-          // 这几个系列会在第一个直角坐标系中，每个系列对应到 dataset 的每一行。
           {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
           {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
           {type: 'bar', stack: ' ', seriesLayoutBy: 'row'},
@@ -74,15 +73,15 @@ export default {
     changeData (groupName) {
       this.group = groupName
     },
-    getJson3 () {
+    getTestData3 () {
       this.$api.GET('/static/json3.json', {
 
       }).then(res => {
         let result = res.data
         if (result) {
-          this.$store.commit('setJson3', result)
-          this.selected = this.$store.getters.getMonthList('json3')[0]
-          this.monthList = this.$store.getters.getMonthList('json3')
+          this.$store.commit('setTestData3', result)
+          this.selected = this.$store.getters.getMonthList('testData3')[0]
+          this.monthList = this.$store.getters.getMonthList('testData3')
         }
       })
     }
@@ -91,14 +90,14 @@ export default {
     group: function (val, oldVal) {
       myChart.setOption({
         dataset: {
-          source: this.$store.getters.getDataFromJson1(this.group, this.selected, 'bar', 'json3')
+          source: this.$store.getters.getDataFromTestData1(this.group, this.selected, 'bar', 'testData3')
         }
       })
     },
     selected: function (val, oldVal) {
       myChart.setOption({
         dataset: {
-          source: this.$store.getters.getDataFromJson1(this.group, this.selected, 'bar', 'json3')
+          source: this.$store.getters.getDataFromTestData1(this.group, this.selected, 'bar', 'testData3')
         }
       })
     }
